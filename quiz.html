@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>JS Quiz</title>
+    <link rel="stylesheet" type="text/css" href="css/styles.css">
+    <script type="text/javascript" src="js/vendor/jquery/jquery-1.11.2.min.js"></script>
+
+    <!-- Highlightjs -->
+    <link rel="stylesheet" type="text/css" href="js/vendor/highlight/styles/atelier-heath.light.css">
+    <script type="text/javascript" src="js/vendor/highlight/highlight.pack.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    <!-- Highlightjs (end)-->
+
+</head>
+<body class="page">
+    <h1>JS Quiz</h1>
+<div class="page__col-half-left">
+<h2>Что выведет alert?</h2>
+<p>В js имеются глобальные и локальные переменные. Что выведет каждый из alert-ов?</p>
+<pre class="js">
+<code>a = 1;
+function f1 () {
+    a = 2;
+    alert(a);
+}
+function f2 (a) {
+    a = 3;
+    alert(a);
+}
+function f3 () {
+    var a = 4;
+    alert(a);
+}
+
+alert(a); // ?
+f1(); // ?
+f2(); // ?
+f3(); // ?
+alert(a); // ?
+</code></pre>
+</div>
+
+<div class="page__col-half-right">
+    <p>Выберите ответ:</p>
+    <form action="#" method="post">
+        <p>
+            <label>
+                <input type="radio" name="answer" value="1"> 1, 2, 3, 4, 1
+            </label>
+        </p>
+        <p>
+            <label>
+                <input type="radio" name="answer" value="1"> 1, 2, 3, 4, 2
+            </label>
+        </p>
+        <p>
+            <label>
+                <input type="radio" name="answer" value="1"> 1, 2, 2, 4, 3
+            </label>
+        </p>
+        <p>
+            <input type="submit" name="submit" value="Ответить">
+        </p>
+    </form>
+    <div class="remark">
+        <a href="javascript:;" class="remark__head link link_pseudo">Пояснение</a>
+        <div class="remark__text">
+            <code>a</code> является глобальной переменной. Она при вызове функции <code>f1</code> получает новое значение: 2. При вызове функции <code>f2</code> в тело функции передается значение <code>a</code> в виде параметра. В этом примере мы аргумент явно не передаем, т.е. не вызваем функцию так: <code>f2(55)</code>. Поэтому аргумент <code>a</code> функции <code>f2</code> получает значение <code>undefined</code>, затем этому аргументу присваивается значение 3, что предотвращает переопределение глобальной переменной <code>a</code>. При вызове функции <code>f3</code> переменная <code>a</code> является локальной, т.к. объявляется при помощи "var": <code>var a = 4;</code>.
+        </div>
+    </div>
+</div>
+</body>
+</html>
