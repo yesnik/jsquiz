@@ -1,0 +1,10 @@
+.remark__text {
+    padding-top: 15px;
+}
+.remark__text code {
+    border: 1px solid #ccc;
+    background: #eee;
+    padding: 0 6px;
+    border-radius: 3px;
+    margin: 0 3px 0 0;
+}

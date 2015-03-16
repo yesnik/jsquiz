@@ -1,0 +1,13 @@
+.page__col-half-left {
+    width: 50%;
+    float: left;
+    padding: 0 20px 0 20px;
+}
+.page__col-half-left pre code {
+    border-radius: 7px;
+}
+.page__col-half-right {
+    padding-top: 55px;
+    width: 45%;
+    margin-left: 55%;
+}
